@@ -50,4 +50,10 @@ public class FavService {
 		return fav;
 	}
 	
+	public int favouriteDelete(int movieid) {
+		
+		int result=dao.deleteByMovieId(movieid);
+		return result;
+	}
+	
 }

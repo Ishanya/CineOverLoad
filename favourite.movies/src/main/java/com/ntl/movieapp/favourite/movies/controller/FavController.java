@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ntl.movieapp.favourite.movies.model.Favourites;
@@ -58,5 +59,12 @@ public class FavController {
 	@PostMapping("/favAdd/{movieid}")
 	public Favourites addToFavourites(@PathVariable("movieid") int movieid) {
 		return service.favouriteListAddition(movieid);
+	}
+	
+	@PutMapping("/favDelete/{movieid}")
+	public int delFavourite(@PathVariable("movieid") int movieid){
+
+		return service.favouriteDelete(movieid);
+		
 	}
 }

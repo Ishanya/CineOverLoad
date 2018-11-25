@@ -27,14 +27,14 @@ public class Favourites {
 	private String movieName;
 	private String moviePosterUrl;
 	private String movieReleaseDate;
-	
+	private String movieDescription;
 
 	
 	
 	
 
 	public Favourites(int favouriteId,int movieId,String userId, String movieName,
-			String moviePosterUrl, String movieReleaseDate) {
+			String moviePosterUrl, String movieReleaseDate,String movieDescription) {
 		super();
 		this.favouriteId = favouriteId;
 		this.movieId = movieId;
@@ -42,6 +42,7 @@ public class Favourites {
 		this.movieName = movieName;
 		this.moviePosterUrl = moviePosterUrl;
 		this.movieReleaseDate = movieReleaseDate;
+		this.movieDescription=movieDescription;
 	}
 
 
@@ -130,6 +131,22 @@ public class Favourites {
 
 	public void setMovieReleaseDate(String movieReleaseDate) {
 		this.movieReleaseDate = movieReleaseDate;
+	}
+
+
+
+
+
+	public String getMovieDescription() {
+		return movieDescription;
+	}
+
+
+
+
+
+	public void setMovieDescription(String movieDescription) {
+		this.movieDescription = movieDescription;
 	}
 
 

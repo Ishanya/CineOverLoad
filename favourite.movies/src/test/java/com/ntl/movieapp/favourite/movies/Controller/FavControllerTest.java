@@ -32,7 +32,7 @@ public class FavControllerTest {
 	String startd[]=stdate.split("/");
 	LocalDate dt=LocalDate.of(Integer.parseInt(startd[2]),Integer.parseInt(startd[1]), Integer.parseInt(startd[0]));
 	
-	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018");
+	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018","this is good");
 	
 	@Test
 	public void testFavouriteList() {
@@ -55,6 +55,14 @@ public class FavControllerTest {
 		FavController control=new FavController(serve,prox);
 		favour=control.addToFavourites(2);
 		assertEquals(1,favour.getMovieId());
+	}
+	
+	@Test
+	public void testDelFavourite() {
+		when(serve.favouriteDelete(1)).thenReturn(1);
+		FavController control=new FavController(serve,prox);
+		int rel=control.delFavourite(1);
+		assertEquals(rel,1);
 	}
 
 }

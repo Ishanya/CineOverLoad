@@ -28,7 +28,7 @@ public class FavServiceTest {
 	@Mock
 	FavDao dao;
 	
-	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018");
+	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018","this is good");
 	Favourites favrt=new Favourites(1,"ti8796");
 	
 	@Test
@@ -53,6 +53,14 @@ public class FavServiceTest {
 		FavService ser=new FavService(dao);
 		favrt=ser.favouriteListAddition(favrt.getMovieId());
 		assertEquals(1,favrt.getMovieId());
+	}
+	
+	@Test
+	public void testFavouriteDelete() {
+		when(dao.deleteByMovieId(1)).thenReturn(1);
+		FavService ser=new FavService(dao);
+		int res=ser.favouriteDelete(1);
+		assertEquals(1,res);
 	}
 
 }

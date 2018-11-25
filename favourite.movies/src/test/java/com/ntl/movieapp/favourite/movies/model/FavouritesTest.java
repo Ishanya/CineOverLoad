@@ -17,7 +17,7 @@ import org.mockito.Mock;
 @RunWith(MockitoJUnitRunner.class)
 public class FavouritesTest {
 
-	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018");
+	Favourites favour=new Favourites(1,1,"ti8796","kal ho na ho","image.jpg","12/12/2018","this is good");
 	
 	
 	@Test
